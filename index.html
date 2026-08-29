@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyMate | Student Learning Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            📚 StudyMate
+        </div>
+
+        <p class="menu-title">
+            MAIN MENU
+        </p>
+
+        <button class="nav-btn active"
+                onclick="showPage('home', this)">
+            🏠 Home
+        </button>
+
+        <button class="nav-btn"
+                onclick="showPage('subjects', this)">
+            📖 Subjects
+        </button>
+
+        <button class="nav-btn"
+                onclick="showPage('notes', this)">
+            📝 Notes
+        </button>
+
+        <button class="nav-btn"
+                onclick="showPage('quiz', this)">
+            🧠 Quiz
+        </button>
+
+        <button class="nav-btn"
+                onclick="showPage('planner', this)">
+            📅 Study Planner
+        </button>
+
+        <button class="nav-btn"
+                onclick="showPage('progress', this)">
+            📊 Progress
+        </button>
+
+        <p class="menu-title subject-menu">
+            SUBJECTS
+        </p>
+
+        <button class="nav-btn"
+                onclick="openSubject('python')">
+            🐍 Python
+        </button>
+
+        <button class="nav-btn"
+                onclick="openSubject('ds')">
+            ⚙️ Data Structures
+        </button>
+
+        <button class="nav-btn"
+                onclick="openSubject('dbms')">
+            🗄️ DBMS
+        </button>
+
+        <button class="nav-btn"
+                onclick="openSubject('web')">
+            🌐 Web Development
+        </button>
+
+    </aside>
+
+
+    <!-- RIGHT SIDE -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h2 id="page-heading">
+                    Dashboard
+                </h2>
+
+                <p>
+                    Learn. Practice. Improve.
+                </p>
+
+            </div>
+
+            <div class="top-badge">
+                🎓 Student Learning Platform
+            </div>
+
+        </header>
+
+
+        <!-- HOME -->
+
+        <section id="home"
+                 class="page active-page">
+
+            <div class="welcome-card">
+
+                <div>
+
+                    <p class="small-label">
+                        WELCOME TO STUDYMATE
+                    </p>
+
+                    <h1>
+                        Learn smarter.<br>
+                        Achieve better.
+                    </h1>
+
+                    <p>
+                        Study tutorials, practice quizzes,
+                        organize your tasks and track your
+                        learning progress.
+                    </p>
+
+                    <button onclick="showPage('subjects')">
+                        Start Learning →
+                    </button>
+
+                </div>
+
+                <div class="welcome-icon">
+                    🎓
+                </div>
+
+            </div>
+
+
+            <h2 class="section-title">
+                Quick Access
+            </h2>
+
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <div class="big-icon">
+                        📖
+                    </div>
+
+                    <h3>Subjects</h3>
+
+                    <p>
+                        Explore programming and computer
+                        science tutorials.
+                    </p>
+
+                    <button onclick="showPage('subjects')">
+                        Explore
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="big-icon">
+                        🧠
+                    </div>
+
+                    <h3>Practice Quiz</h3>
+
+                    <p>
+                        Test your knowledge with
+                        subject-based quizzes.
+                    </p>
+
+                    <button onclick="showPage('quiz')">
+                        Start Quiz
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="big-icon">
+                        📅
+                    </div>
+
+                    <h3>Study Planner</h3>
+
+                    <p>
+                        Create and manage your study tasks.
+                    </p>
+
+                    <button onclick="showPage('planner')">
+                        Open Planner
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="big-icon">
+                        📊
+                    </div>
+
+                    <h3>Progress</h3>
+
+                    <p>
+                        Check completed tutorials and
+                        quiz scores.
+                    </p>
+
+                    <button onclick="showPage('progress')">
+                        View Progress
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUBJECTS -->
+
+        <section id="subjects"
+                 class="page">
+
+            <div class="page-intro">
+
+                <h1>Explore Subjects</h1>
+
+                <p>
+                    Choose a subject and start learning.
+                </p>
+
+            </div>
+
+
+            <div class="subject-grid">
+
+                <div class="subject-card">
+
+                    <div class="subject-icon">
+                        🐍
+                    </div>
+
+                    <h2>Python</h2>
+
+                    <p>
+                        Learn variables, conditions,
+                        loops, functions and Python basics.
+                    </p>
+
+                    <button onclick="openSubject('python')">
+                        Start Learning →
+                    </button>
+
+                </div>
+
+
+                <div class="subject-card">
+
+                    <div class="subject-icon">
+                        ⚙️
+                    </div>
+
+                    <h2>Data Structures</h2>
+
+                    <p>
+                        Learn arrays, linked lists,
+                        stacks, queues and searching.
+                    </p>
+
+                    <button onclick="openSubject('ds')">
+                        Start Learning →
+                    </button>
+
+                </div>
+
+
+                <div class="subject-card">
+
+                    <div class="subject-icon">
+                        🗄️
+                    </div>
+
+                    <h2>DBMS</h2>
+
+                    <p>
+                        Learn databases, SQL,
+                        keys, joins and normalization.
+                    </p>
+
+                    <button onclick="openSubject('dbms')">
+                        Start Learning →
+                    </button>
+
+                </div>
+
+
+                <div class="subject-card">
+
+                    <div class="subject-icon">
+                        🌐
+                    </div>
+
+                    <h2>Web Development</h2>
+
+                    <p>
+                        Learn HTML, CSS,
+                        JavaScript and responsive design.
+                    </p>
+
+                    <button onclick="openSubject('web')">
+                        Start Learning →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOTES -->
+
+        <section id="notes"
+                 class="page">
+
+            <div class="page-intro">
+
+                <h1>Study Notes</h1>
+
+                <p>
+                    Choose a subject to view tutorials.
+                </p>
+
+            </div>
+
+
+            <div class="notes-subjects">
+
+                <button onclick="openSubject('python')">
+                    🐍 Python Notes
+                </button>
+
+                <button onclick="openSubject('ds')">
+                    ⚙️ Data Structures Notes
+                </button>
+
+                <button onclick="openSubject('dbms')">
+                    🗄️ DBMS Notes
+                </button>
+
+                <button onclick="openSubject('web')">
+                    🌐 Web Development Notes
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- TUTORIAL -->
+
+        <section id="tutorial"
+                 class="page">
+
+            <div class="tutorial-layout">
+
+
+                <!-- TUTORIAL LEFT -->
+
+                <div class="tutorial-menu">
+
+                    <button class="back-btn"
+                            onclick="showPage('subjects')">
+                        ← Subjects
+                    </button>
+
+                    <h3 id="tutorial-subject-name">
+                        Subject
+                    </h3>
+
+                    <div id="topic-list"></div>
+
+                </div>
+
+
+                <!-- TUTORIAL RIGHT -->
+
+                <div class="tutorial-content">
+
+                    <p class="lesson-label">
+                        STUDY NOTES
+                    </p>
+
+                    <h1 id="lesson-title">
+                        Select a topic
+                    </h1>
+
+                    <div id="lesson-content">
+
+                        <p>
+                            Choose a lesson from the
+                            left menu.
+                        </p>
+
+                    </div>
+
+                    <div class="lesson-actions">
+
+                        <button id="previous-btn"
+                                onclick="previousLesson()">
+                            ← Previous
+                        </button>
+
+                        <button class="complete-btn"
+                                onclick="markCurrentCompleted()">
+                            ✓ Mark Completed
+                        </button>
+
+                        <button id="next-btn"
+                                onclick="nextLesson()">
+                            Next →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+
+        <section id="quiz"
+                 class="page">
+
+            <div class="page-intro">
+
+                <h1>Practice Quiz</h1>
+
+                <p>
+                    Choose a subject and test
+                    your knowledge.
+                </p>
+
+            </div>
+
+
+            <div class="quiz-buttons">
+
+                <button onclick="startQuiz('python')">
+                    Python
+                </button>
+
+                <button onclick="startQuiz('ds')">
+                    Data Structures
+                </button>
+
+                <button onclick="startQuiz('dbms')">
+                    DBMS
+                </button>
+
+                <button onclick="startQuiz('web')">
+                    Web Development
+                </button>
+
+            </div>
+
+
+            <div id="quiz-box"
+                 class="quiz-box">
+
+                <div class="quiz-empty">
+                    🧠
+
+                    <h2>
+                        Ready to practice?
+                    </h2>
+
+                    <p>
+                        Select a subject above
+                        to start the quiz.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PLANNER -->
+
+        <section id="planner"
+                 class="page">
+
+            <div class="page-intro">
+
+                <h1>Study Planner</h1>
+
+                <p>
+                    Organize your daily study tasks.
+                </p>
+
+            </div>
+
+
+            <div class="planner-card">
+
+                <h2>
+                    Add Study Task
+                </h2>
+
+                <div class="task-input">
+
+                    <input
+                        id="taskInput"
+                        type="text"
+                        placeholder="Example: Study Python loops"
+                    >
+
+                    <button onclick="addTask()">
+                        + Add Task
+                    </button>
+
+                </div>
+
+                <div class="task-heading">
+
+                    <h3>Your Tasks</h3>
+
+                    <span id="task-count">
+                        0 Tasks
+                    </span>
+
+                </div>
+
+                <ul id="taskList"></ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROGRESS -->
+
+        <section id="progress"
+                 class="page">
+
+            <div class="page-intro">
+
+                <h1>Learning Progress</h1>
+
+                <p>
+                    View your completed lessons
+                    and quiz performance.
+                </p>
+
+            </div>
+
+
+            <div class="progress-grid">
+
+                <div class="progress-card">
+
+                    <p>
+                        COMPLETED TUTORIALS
+                    </p>
+
+                    <h2 id="completed-count">
+                        0
+                    </h2>
+
+                </div>
+
+
+                <div class="progress-card">
+
+                    <p>
+                        PYTHON BEST SCORE
+                    </p>
+
+                    <h2 id="python-score">
+                        0 / 10
+                    </h2>
+
+                </div>
+
+
+                <div class="progress-card">
+
+                    <p>
+                        DATA STRUCTURES
+                    </p>
+
+                    <h2 id="ds-score">
+                        0 / 10
+                    </h2>
+
+                </div>
+
+
+                <div class="progress-card">
+
+                    <p>
+                        DBMS BEST SCORE
+                    </p>
+
+                    <h2 id="dbms-score">
+                        0 / 10
+                    </h2>
+
+                </div>
+
+
+                <div class="progress-card">
+
+                    <p>
+                        WEB DEVELOPMENT
+                    </p>
+
+                    <h2 id="web-score">
+                        0 / 10
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-message">
+
+                <h2>Keep Learning 🚀</h2>
+
+                <p>
+                    Complete tutorials and quizzes
+                    to improve your progress.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

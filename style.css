@@ -1,0 +1,678 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* ================= SIDEBAR ================= */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 255px;
+    background: #111827;
+    color: white;
+    padding: 25px 18px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.menu-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #94a3b8;
+    margin: 20px 10px 10px;
+}
+
+.subject-menu {
+    margin-top: 35px;
+}
+
+.nav-btn {
+    width: 100%;
+    background: transparent;
+    color: #cbd5e1;
+    border: none;
+    text-align: left;
+    padding: 13px 14px;
+    margin: 3px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.nav-btn:hover {
+    background: #1f2937;
+    color: white;
+}
+
+.nav-btn.active {
+    background: #4f46e5;
+    color: white;
+}
+
+
+/* ================= RIGHT SIDE ================= */
+
+.main-content {
+    margin-left: 255px;
+    width: calc(100% - 255px);
+    min-height: 100vh;
+}
+
+.topbar {
+    height: 85px;
+    background: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.topbar h2 {
+    font-size: 22px;
+}
+
+.topbar p {
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.top-badge {
+    background: #eef2ff;
+    color: #4338ca;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+
+/* ================= PAGES ================= */
+
+.page {
+    display: none;
+    padding: 40px;
+}
+
+.active-page {
+    display: block;
+}
+
+.page-intro {
+    margin-bottom: 30px;
+}
+
+.page-intro h1 {
+    font-size: 32px;
+}
+
+.page-intro p {
+    color: #64748b;
+    margin-top: 8px;
+}
+
+.section-title {
+    margin: 35px 0 20px;
+}
+
+
+/* ================= HOME ================= */
+
+.welcome-card {
+    min-height: 300px;
+    background: linear-gradient(
+        135deg,
+        #312e81,
+        #4f46e5
+    );
+    border-radius: 20px;
+    color: white;
+    padding: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small-label {
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.welcome-card h1 {
+    font-size: 44px;
+    margin-bottom: 15px;
+}
+
+.welcome-card p {
+    line-height: 1.7;
+    max-width: 550px;
+}
+
+.welcome-card button {
+    background: white;
+    color: #4338ca;
+    border: none;
+    margin-top: 25px;
+    padding: 13px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.welcome-icon {
+    font-size: 110px;
+    padding: 20px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+    gap: 20px;
+}
+
+.dashboard-card,
+.subject-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e5e7eb;
+    transition: 0.3s;
+}
+
+.dashboard-card:hover,
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px
+        rgba(0, 0, 0, 0.08);
+}
+
+.big-icon {
+    font-size: 35px;
+    margin-bottom: 16px;
+}
+
+.dashboard-card h3 {
+    margin-bottom: 10px;
+}
+
+.dashboard-card p,
+.subject-card p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.dashboard-card button,
+.subject-card button {
+    border: none;
+    background: #4f46e5;
+    color: white;
+    border-radius: 7px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+
+/* ================= SUBJECTS ================= */
+
+.subject-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, 1fr);
+    gap: 25px;
+}
+
+.subject-card {
+    padding: 35px;
+}
+
+.subject-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.subject-card h2 {
+    margin-bottom: 10px;
+}
+
+
+/* ================= NOTES ================= */
+
+.notes-subjects {
+    display: grid;
+    grid-template-columns:
+        repeat(2, 1fr);
+    gap: 20px;
+}
+
+.notes-subjects button {
+    padding: 30px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 17px;
+    text-align: left;
+}
+
+.notes-subjects button:hover {
+    border-color: #4f46e5;
+}
+
+
+/* ================= TUTORIAL ================= */
+
+.tutorial-layout {
+    display: grid;
+    grid-template-columns:
+        270px 1fr;
+    min-height: 650px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.tutorial-menu {
+    background: #f8fafc;
+    padding: 25px;
+    border-right: 1px solid #e2e8f0;
+}
+
+.back-btn {
+    border: none;
+    background: transparent;
+    color: #4f46e5;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.tutorial-menu h3 {
+    margin-bottom: 18px;
+}
+
+.topic-button {
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: left;
+    padding: 12px;
+    border-radius: 7px;
+    margin: 3px 0;
+    cursor: pointer;
+    color: #475569;
+}
+
+.topic-button:hover {
+    background: #e0e7ff;
+}
+
+.topic-button.selected {
+    background: #4f46e5;
+    color: white;
+}
+
+.tutorial-content {
+    padding: 40px;
+}
+
+.lesson-label {
+    color: #4f46e5;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.tutorial-content h1 {
+    font-size: 34px;
+    margin: 12px 0 25px;
+}
+
+#lesson-content h3 {
+    margin: 25px 0 10px;
+}
+
+#lesson-content p,
+#lesson-content li {
+    line-height: 1.8;
+    color: #475569;
+}
+
+#lesson-content ul {
+    margin-left: 25px;
+}
+
+pre {
+    margin: 20px 0;
+    background: #111827;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    line-height: 1.6;
+}
+
+.lesson-actions {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.lesson-actions button {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    background: #4f46e5;
+    color: white;
+    cursor: pointer;
+}
+
+.lesson-actions .complete-btn {
+    background: #15803d;
+}
+
+
+/* ================= QUIZ ================= */
+
+.quiz-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.quiz-buttons button {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.quiz-box {
+    background: white;
+    max-width: 800px;
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+}
+
+.quiz-empty {
+    text-align: center;
+    font-size: 45px;
+}
+
+.quiz-empty h2 {
+    font-size: 25px;
+    margin: 15px;
+}
+
+.quiz-empty p {
+    font-size: 16px;
+    color: #64748b;
+}
+
+.quiz-question-count {
+    color: #4f46e5;
+    margin-bottom: 12px;
+}
+
+.quiz-option {
+    display: block;
+    width: 100%;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #172033;
+    padding: 14px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.quiz-option:hover {
+    background: #eef2ff;
+}
+
+.quiz-option.correct {
+    background: #dcfce7;
+    border-color: #16a34a;
+}
+
+.quiz-option.wrong {
+    background: #fee2e2;
+    border-color: #dc2626;
+}
+
+.quiz-feedback {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.next-question {
+    margin-top: 15px;
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+/* ================= PLANNER ================= */
+
+.planner-card {
+    max-width: 800px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+}
+
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0 30px;
+}
+
+.task-input input {
+    flex: 1;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.task-input button {
+    border: none;
+    background: #4f46e5;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.task-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#taskList {
+    list-style: none;
+}
+
+#taskList li {
+    padding: 14px;
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/* ================= PROGRESS ================= */
+
+.progress-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(5, 1fr);
+    gap: 18px;
+}
+
+.progress-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+.progress-card p {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.progress-card h2 {
+    font-size: 30px;
+    color: #4f46e5;
+    margin-top: 12px;
+}
+
+.progress-message {
+    margin-top: 30px;
+    padding: 30px;
+    background: #eef2ff;
+    border-radius: 15px;
+}
+
+.progress-message p {
+    margin-top: 8px;
+    color: #64748b;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .dashboard-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .progress-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+    }
+
+    .app {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .topbar {
+        height: auto;
+        padding: 20px;
+    }
+
+    .top-badge {
+        display: none;
+    }
+
+    .page {
+        padding: 20px;
+    }
+
+    .welcome-card {
+        padding: 30px;
+    }
+
+    .welcome-card h1 {
+        font-size: 34px;
+    }
+
+    .welcome-icon {
+        display: none;
+    }
+
+    .dashboard-grid,
+    .subject-grid,
+    .notes-subjects,
+    .progress-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tutorial-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .tutorial-menu {
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .tutorial-content {
+        padding: 25px;
+    }
+
+    .lesson-actions {
+        flex-direction: column;
+    }
+
+    .task-input {
+        flex-direction: column;
+    }
+
+}
